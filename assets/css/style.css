@@ -31,6 +31,24 @@ body {
     border: none;
 }
 
+/* Grow */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: white;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+
 /** Navbar End **/
 
 /* Jumbotron */
@@ -39,6 +57,10 @@ body {
     margin: 5rem;
     text-align: center;
     background-color: white;
+}
+
+.jumbotron-container {
+    height: 100%;
 }
 
 .mb-4, .my-4 {
@@ -64,37 +86,61 @@ body {
   }
 }
 
+.fa-sync:hover {
+    animation: rotate 0.8s linear;
+    animation-delay: 1s;
+}
+
 /* Jumbotron End */
 
-/* Grow */
-.hvr-grow {
-    display: inline-block;
-    vertical-align: middle;
-    transform: translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    backface-visibility: hidden;
-    -moz-osx-font-smoothing: white;
-    transition-duration: 0.3s;
-    transition-property: transform;
+/** Footer **/
+
+footer {
+    background-color: black;
+    padding: 20px;
 }
 
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-    transform: scale(1.1);
+.copyright {
+    text-align: center;
+    color: white;
 }
 
+a .fa-linkedin,
+a .fa-github {
+    color: white;
+    text-align: center;
+    transform: scale(2);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+
+.fa-linkedin:hover,
+.fa-github:hover {
+    color: orange;
+}
+
+.col-sm-4 {
+    text-align: center;
+}
 
 /* Media Queries*/
 
 @media (max-width: 480px) {
     .jumbotron {
-        margin-top: 2rem;
-        margin-bottom: 0;
-        margin-left: 0;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
         margin-right: 0;
+        margin-left: 0;
     }
+
     .display-4 {
         font-size: 40px;
+    }
+
+    .copyright {
+        padding: 15px 0;
+        margin: 0;
     }
 }
