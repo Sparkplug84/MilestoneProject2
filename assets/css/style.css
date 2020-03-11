@@ -94,7 +94,7 @@ body {
 .quiz-container {
     display: block;
     width: 600px;
-    height: 670px;
+    height: 715px;
     background-color: white;
     margin: 50px auto;
     padding: 5px  10px;
@@ -105,6 +105,7 @@ body {
     height: 100px;
     margin: 5px auto;
     text-align: center;
+    line-height: 100px;
 }
 
 .answer {
@@ -125,6 +126,12 @@ body {
     float: right;
 }
 
+.first-button,
+.last-button {
+    position: relative;
+    top: 25px;
+}
+
 .up,
 .down {
     height: 50px;
@@ -132,6 +139,11 @@ body {
     display: block;
     border-radius: 50%;
     border: none;
+}
+
+.quiz-submit {
+    position: relative;
+    left: 70%;
 }
 
 /* Quiz Container End */
@@ -199,6 +211,9 @@ a .fa-github {
         width: 82%;
         padding: 0 5px;
     }
+    .quiz-submit {
+    left: 50%;
+}
 }
 
 @media(min-width: 1400px) {
