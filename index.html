@@ -38,7 +38,7 @@
 		</nav>
 	</div>
 
-	<div class="container-fluid jumbotron-container">
+	<div id="callout" class="container-fluid jumbotron-container">
 		<div class="jumbotron">
 			<h1 class="display-4">Welcome to Order it!<i class="fas fa-sync"></i></h1>
 			<p class="lead">Order It! is a fun and interactive quiz where you need to put the answers in the correct
@@ -46,17 +46,17 @@
 			</p>
 			<hr class="my-4">
 			<p>So dive in, give it a go and let's see what you can do.</p>
-			<a class="game-start btn btn-primary btn-lg" href="#" role="button">Start the Quiz!</a>
+			<a id="start-quiz" class="btn btn-primary btn-lg" href="#" role="button">Start the Quiz!</a>
 		</div>
 	</div>
 
-	<div class="quiz-container">
-		<div class="quiz-question">hkdhds</div>
-		<div class= "answer-container"><div class="answer ans1">mmrrrrmmm</div><div class="button-container"><button class="down first-button"><i class="fas fa-chevron-down"></i></button></div></div>
-		<div class= "answer-container"><div class="answer ans2">qqqqq</div><div class="button-container"><button class="up"><i class="fas fa-chevron-up"></i></button><button class="down"><i class="fas fa-chevron-down"></i></button></div></div>
-		<div class= "answer-container"><div class="answer ans3">sdfdfs</div><div class="button-container"><button class="up"><i class="fas fa-chevron-up"></i></button><button class="down"><i class="fas fa-chevron-down"></i></button></div></div>
-		<div class= "answer-container"><div class="answer ans4">sefgdgdgd</div><div class="button-container"><button class="up"><i class="fas fa-chevron-up"></i></button><button class="down"><i class="fas fa-chevron-down"></i></button></div></div>
-		<div class= "answer-container"><div class="answer ans5">sdfsf</div><div class="button-container"><button class="up last-button"><i class="fas fa-chevron-up"></i></button></div></div>
+	<div id="quiz" class="quiz-container d-none">
+		<div id="question" class="quiz-question"></div>
+		<div class= "answer-container"><div id="ans1" class="answer"></div><div class="button-container"><button class="down first-button"><i class="fas fa-chevron-down"></i></button></div></div>
+		<div class= "answer-container"><div id="ans2" class="answer"></div><div class="button-container"><button class="up"><i class="fas fa-chevron-up"></i></button><button class="down"><i class="fas fa-chevron-down"></i></button></div></div>
+		<div class= "answer-container"><div id="ans3" class="answer"></div><div class="button-container"><button class="up"><i class="fas fa-chevron-up"></i></button><button class="down"><i class="fas fa-chevron-down"></i></button></div></div>
+		<div class= "answer-container"><div id="ans4" class="answer"></div><div class="button-container"><button class="up"><i class="fas fa-chevron-up"></i></button><button class="down"><i class="fas fa-chevron-down"></i></button></div></div>
+		<div class= "answer-container"><div id="ans5" class="answer"></div><div class="button-container"><button class="up last-button"><i class="fas fa-chevron-up"></i></button></div></div>
         <button class="quiz-submit btn btn-primary btn-lg">Check Answer</button>
 	</div>
 
@@ -83,9 +83,9 @@
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 
 </html>

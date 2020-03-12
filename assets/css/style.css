@@ -2,7 +2,7 @@
 
 body {
     font-family: "Ubuntu", sans-serif;
-    background-color: orange;
+    background-color: #E9724C;
 }
 
 /** Navbar **/
@@ -20,7 +20,7 @@ body {
     margin-bottom: 0;
     border: 0;
     width: 100%;
-    background-color: black;
+    background-color: #481D24;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -57,7 +57,7 @@ body {
     margin: 5rem;
     text-align: center;
     background-color: white;
-    transform: translateY(25%);
+    transform: translateY(15%);
 }
 
 .jumbotron-container {
@@ -115,7 +115,7 @@ body {
 }
 
 .quiz-question {
-    background-color: black;
+    background-color: #C5283D;
     color: white;
     width: 100%;
 }
@@ -213,6 +213,9 @@ a .fa-github {
     }
     .quiz-submit {
     left: 50%;
+    }
+    .quiz-question {
+    line-height: 50px;
 }
 }
 
