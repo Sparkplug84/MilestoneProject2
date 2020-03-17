@@ -52,12 +52,40 @@
 
 	<div id="quiz" class="quiz-container d-none">
 		<div id="question" class="quiz-question"></div>
-		<div class= "answer-container"><div id="ans1" class="answer"></div><div class="button-container"><button class="down first-button"><i class="fas fa-chevron-down"></i></button></div></div>
-		<div class= "answer-container"><div id="ans2" class="answer"></div><div class="button-container"><button class="up"><i class="fas fa-chevron-up"></i></button><button class="down"><i class="fas fa-chevron-down"></i></button></div></div>
-		<div class= "answer-container"><div id="ans3" class="answer"></div><div class="button-container"><button class="up"><i class="fas fa-chevron-up"></i></button><button class="down"><i class="fas fa-chevron-down"></i></button></div></div>
-		<div class= "answer-container"><div id="ans4" class="answer"></div><div class="button-container"><button class="up"><i class="fas fa-chevron-up"></i></button><button class="down"><i class="fas fa-chevron-down"></i></button></div></div>
-		<div class= "answer-container"><div id="ans5" class="answer"></div><div class="button-container"><button class="up last-button"><i class="fas fa-chevron-up"></i></button></div></div>
-        <button class="quiz-submit btn btn-primary btn-lg">Check Answer</button>
+
+		<div id="container1" class="answer-container">
+			<div id="ans1" class="answer"></div>
+		</div>
+		<div class="button-container">
+			<button id="switch1" class="btn-style"><i class="fas fa-sync"></i></button>
+		</div>
+
+		<div id="container2" class="answer-container">
+			<div id="ans2" class="answer"></div>
+		</div>
+		<div class="button-container">
+			<button id="switch2" class="btn-style"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up"></i></button>
+		</div>
+
+		<div id="container3" class="answer-container">
+			<div id="ans3" class="answer"></div>
+		</div>
+		<div class="button-container">
+			<button id="switch3" class="btn-style"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up"></i></button>
+		</div>
+
+		<div id="container4" class="answer-container">
+			<div id="ans4" class="answer"></div>
+		</div>
+		<div class="button-container">
+			<button id="switch4" class="btn-style"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up"></i></button>
+		</div>
+
+		<div id="container5" class="answer-container">
+			<div id="ans5" class="answer"></div>
+		</div>
+
+		<button class="quiz-submit btn btn-primary btn-lg">Check Answer</button>
 	</div>
 
 	<footer class="container-fluid">
@@ -85,7 +113,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 
 </html>
