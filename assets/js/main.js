@@ -50,8 +50,10 @@ function buildQuiz() {
 }
 
 document.getElementById("switch1").addEventListener('click', () => {
-  answerTwoContainer.appendChild(answerOneContainer.firstElementChild);
+  answerTwoContainer.appendChild(answerOneContainer.firstElementChild);/*.classList.add("switch-animation");*/
   answerOneContainer.appendChild(answerTwoContainer.firstElementChild);
+  setTimeout(()=> answerOneContainer.firstElementChild.classList.add("switch-animation"), i*500);
+  
 });
 
 document.getElementById("switch2").addEventListener('click', () => {

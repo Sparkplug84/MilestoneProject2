@@ -54,21 +54,23 @@ body {
 /* Jumbotron */
 
 .jumbotron {
-    margin: 5rem;
+    margin: 5rem 0;
     text-align: center;
     background-color: white;
     transform: translateY(15%);
+    border-radius: 0;
 }
 
 .jumbotron-container {
     height: 100vh;
+    padding: 0;
 }
 
 .mb-4, .my-4 {
     display: none;
 }
 
-.fa-sync {
+.callout-animation {
     transform: scale(0.8);
     margin-left: 10px;
     animation: rotate 0.8s linear;
@@ -103,8 +105,8 @@ body {
 .answer,
 .quiz-question {
     height: 100px;
-    margin: 5px auto;
     padding: 0 10px;
+    margin-bottom: 5px;
     text-align: center;
     line-height: 100px;
 }
@@ -147,13 +149,28 @@ body {
     border-radius: 50%;
     border: none;
     position: relative;
-    top: 85px;
+    top: 80px;
+    background-color: #255F85;
+}
+
+.switch-button {
+    margin: 0 auto;
+    font-size: 20px;
+    color: white;
 }
 
 .quiz-submit {
     position: relative;
     left: 70%;
     margin-top: 10px;
+}
+
+.switch-animation {
+-webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 
 /* Quiz Container End */
