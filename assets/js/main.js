@@ -16,27 +16,27 @@ const myQuestions = [
     {
         question: "Starting with the most put these countries in order of total population",
         answers: [
-            {"correct_order": 5, "details": "Ireland"},
-            {"correct_order": 2, "details": "United States"},
-            {"correct_order": 3, "details": "Russia"},
-            {"correct_order": 1, "details": "China"},
-            {"correct_order": 4, "details": "United Kingdom"}     
+            { "correct_order": 5, "details": "Ireland" },
+            { "correct_order": 2, "details": "United States" },
+            { "correct_order": 3, "details": "Russia" },
+            { "correct_order": 1, "details": "China" },
+            { "correct_order": 4, "details": "United Kingdom" }
         ]
     },
     {
         question: "Starting with the most put these countries in order of size",
         answers: [
-            {"correct_order": 2, "details": "Canada"},
-            {"correct_order": 5, "details": "Ireland"},
-            {"correct_order": 3, "details": "Australia"},
-            {"correct_order": 4, "details": "Mexico"},
-            {"correct_order": 1, "details": "Russia"}
+            { "correct_order": 2, "details": "Canada" },
+            { "correct_order": 5, "details": "Ireland" },
+            { "correct_order": 3, "details": "Australia" },
+            { "correct_order": 4, "details": "Mexico" },
+            { "correct_order": 1, "details": "Russia" }
         ]
     }
-    
+
 ]
 
-document.getElementById("start-quiz").onclick = function() {buildQuiz()};
+document.getElementById("start-quiz").onclick = function () { buildQuiz() };
 
 function buildQuiz() {
     document.getElementById("callout").classList.add("d-none");
@@ -46,37 +46,47 @@ function buildQuiz() {
     answerTwo.innerHTML = myQuestions[0].answers[1].details;
     answerThree.innerHTML = myQuestions[0].answers[2].details;
     answerFour.innerHTML = myQuestions[0].answers[3].details;
-    answerFive.innerHTML = myQuestions[0].answers[4].details;
-}
+    answerFive.innerHTML = myQuestions[0].answers[4].details;    
+};
 
 document.getElementById("switch1").addEventListener('click', () => {
-  answerTwoContainer.appendChild(answerOneContainer.firstElementChild);/*.classList.add("switch-animation");*/
-  answerOneContainer.appendChild(answerTwoContainer.firstElementChild);
-  setTimeout(()=> answerOneContainer.firstElementChild.classList.add("switch-animation"), i*500);
-  
+    $('#container1').children(":first").slideToggle('fast');
+    $('#container2').children(":first").slideToggle('fast', function () {
+        answerTwoContainer.appendChild(answerOneContainer.firstElementChild);
+        answerOneContainer.appendChild(answerTwoContainer.firstElementChild);
+    });
+    $('#container1').children(":first").slideToggle('fast');
+    $('#container2').children(":first").slideToggle('fast');;
 });
 
 document.getElementById("switch2").addEventListener('click', () => {
-  answerThreeContainer.appendChild(answerTwoContainer.firstElementChild);
-  answerTwoContainer.appendChild(answerThreeContainer.firstElementChild);
+    $('#container2').children(":first").slideToggle('fast');
+    $('#container3').children(":first").slideToggle('fast', function () {
+        answerThreeContainer.appendChild(answerTwoContainer.firstElementChild);
+        answerTwoContainer.appendChild(answerThreeContainer.firstElementChild);
+    });
+    $('#container2').children(":first").slideToggle('fast');
+    $('#container3').children(":first").slideToggle('fast');;
 });
 
 document.getElementById("switch3").addEventListener('click', () => {
-  answerFourContainer.appendChild(answerThreeContainer.firstElementChild);
-  answerThreeContainer.appendChild(answerFourContainer.firstElementChild);
+    $('#container3').children(":first").slideToggle('fast');
+    $('#container4').children(":first").slideToggle('fast', function () {
+        answerFourContainer.appendChild(answerThreeContainer.firstElementChild);
+        answerThreeContainer.appendChild(answerFourContainer.firstElementChild);
+    });
+    $('#container3').children(":first").slideToggle('fast');
+    $('#container4').children(":first").slideToggle('fast');;
 });
 
 document.getElementById("switch4").addEventListener('click', () => {
-  answerFiveContainer.appendChild(answerFourContainer.firstElementChild);
-  answerFourContainer.appendChild(answerFiveContainer.firstElementChild);
+    $('#container4').children(":first").slideToggle('fast');
+    $('#container5').children(":first").slideToggle('fast', function () {
+        answerFiveContainer.appendChild(answerFourContainer.firstElementChild);
+        answerFourContainer.appendChild(answerFiveContainer.firstElementChild);
+    });
+    $('#container4').children(":first").slideToggle('fast');
+    $('#container5').children(":first").slideToggle('fast');;
 });
-
-/* document.getElementById("down1").onclick = function() {switchElements()};
-
-function switchElements() {
-    answerTwoContainer.firstChild.append(answerOneContainer);
-    /* answerOneContainer.firstChild.append(answerTwoContainer.firstChild); 
-    $('#container1:first').appendTo( $('#container2') );
-}*/
 
 console.log("hello!");
