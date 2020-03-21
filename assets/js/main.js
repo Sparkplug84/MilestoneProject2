@@ -49,44 +49,32 @@ function buildQuiz() {
     answerFive.innerHTML = myQuestions[0].answers[4].details;    
 };
 
-document.getElementById("switch1").addEventListener('click', () => {
-    $('#container1').children(":first").slideToggle('fast');
-    $('#container2').children(":first").slideToggle('fast', function () {
-        answerTwoContainer.appendChild(answerOneContainer.firstElementChild);
-        answerOneContainer.appendChild(answerTwoContainer.firstElementChild);
-    });
-    $('#container1').children(":first").slideToggle('fast');
-    $('#container2').children(":first").slideToggle('fast');;
-});
+let answerContainers = {
+ "container1": answerOneContainer,
+"container2": answerTwoContainer,
+"container3": answerThreeContainer,
+"container4": answerFourContainer,
+"container5": answerFiveContainer,
+}
 
-document.getElementById("switch2").addEventListener('click', () => {
-    $('#container2').children(":first").slideToggle('fast');
-    $('#container3').children(":first").slideToggle('fast', function () {
-        answerThreeContainer.appendChild(answerTwoContainer.firstElementChild);
-        answerTwoContainer.appendChild(answerThreeContainer.firstElementChild);
+function swapAnswersContainer(switchButton, container1, container2) {
+    document.getElementById(switchButton).addEventListener('click', () => {
+    $("#" + container1).children(":first").slideToggle('fast');
+    $("#" + container2).children(":first").slideToggle('fast', function () {
+        answerContainers[container2].appendChild(answerContainers[container1].firstElementChild);
+        answerContainers[container1].appendChild(answerContainers[container2].firstElementChild);
     });
-    $('#container2').children(":first").slideToggle('fast');
-    $('#container3').children(":first").slideToggle('fast');;
+    $("#" + container1).children(":first").slideToggle('fast');
+    $("#" + container2).children(":first").slideToggle('fast');
 });
+}
 
-document.getElementById("switch3").addEventListener('click', () => {
-    $('#container3').children(":first").slideToggle('fast');
-    $('#container4').children(":first").slideToggle('fast', function () {
-        answerFourContainer.appendChild(answerThreeContainer.firstElementChild);
-        answerThreeContainer.appendChild(answerFourContainer.firstElementChild);
-    });
-    $('#container3').children(":first").slideToggle('fast');
-    $('#container4').children(":first").slideToggle('fast');;
-});
+swapAnswersContainer("switch1", "container1", "container2");
+swapAnswersContainer("switch2", "container2", "container3");
+swapAnswersContainer("switch3", "container3", "container4");
+swapAnswersContainer("switch4", "container4", "container5");
 
-document.getElementById("switch4").addEventListener('click', () => {
-    $('#container4').children(":first").slideToggle('fast');
-    $('#container5').children(":first").slideToggle('fast', function () {
-        answerFiveContainer.appendChild(answerFourContainer.firstElementChild);
-        answerFourContainer.appendChild(answerFiveContainer.firstElementChild);
-    });
-    $('#container4').children(":first").slideToggle('fast');
-    $('#container5').children(":first").slideToggle('fast');;
-});
+
+
 
 console.log("hello!");
