@@ -1,4 +1,4 @@
-/* Variables */
+// VARIABLES
 
 const quizQuestion = document.getElementById('question');
 const answerOne = document.getElementById('ans1');
@@ -11,6 +11,8 @@ const answerTwoContainer = document.getElementById('container2');
 const answerThreeContainer = document.getElementById('container3');
 const answerFourContainer = document.getElementById('container4');
 const answerFiveContainer = document.getElementById('container5');
+
+// QUIZ QUESTIONS
 
 const myQuestions = [
     {
@@ -45,7 +47,7 @@ const myQuestions = [
     }
 ]
 
-
+// BUILD QUIZ FUNCTION
 
 document.getElementById("start-quiz").onclick = function () { buildQuiz() };
 
@@ -61,6 +63,8 @@ function buildQuiz() {
     answerFour.innerHTML = myQuestions[counter].answers[3].details;
     answerFive.innerHTML = myQuestions[counter].answers[4].details;    
 };
+
+// SWITCH ANSWERS FUNCTION
 
 let answerContainers = {
     "container1": answerOneContainer,
@@ -87,12 +91,23 @@ swapAnswersContainer("switch2", "container2", "container3");
 swapAnswersContainer("switch3", "container3", "container4");
 swapAnswersContainer("switch4", "container4", "container5");
 
+// CHECK ANSWERS FUNCTION
+
 document.getElementById("quizSubmit").onclick = function () { checkAnswer() };
 
 function checkAnswer() {
     document.getElementById("quizSubmit").classList.add("d-none");
     document.getElementById("nextQuestion").classList.remove("d-none");
+
+    let score = 0;
+    if (answerOneContainer.firstElementChild = myQuestions.answers.correct_order("1")) {
+        document.getElementById("container1").classList.add("green-border")
+    } else {
+        document.getElementById("container1").classList.add("red-border")
+    }
 };
+
+// NEXT QUESTION FUNCTION
 
 document.getElementById("nextQuestion").onclick = function () { nextButton() };
 
@@ -106,6 +121,3 @@ function nextButton() {
     document.getElementById("nextQuestion").classList.add("d-none");
     document.getElementById("quizSubmit").classList.remove("d-none");
 };
-
-
-console.log("hello!");
