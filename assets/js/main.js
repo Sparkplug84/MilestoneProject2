@@ -18,31 +18,32 @@ const myQuestions = [
     {
         question: "Starting with the most put these countries in order of total population",
         answers: [
-            { "correct_order": 5, "details": "Ireland" },
-            { "correct_order": 2, "details": "United States" },
-            { "correct_order": 3, "details": "Russia" },
-            { "correct_order": 1, "details": "China" },
-            { "correct_order": 4, "details": "United Kingdom" }
+            { "correct_order": 4, "details": "Ireland" },
+            { "correct_order": 1, "details": "United States" },
+            { "correct_order": 2, "details": "Russia" },
+            { "correct_order": 0, "details": "China" },
+            { "correct_order": 3, "details": "United Kingdom" }
         ]
     },
     {
         question: "Starting with the most put these countries in order of size",
         answers: [
-            { "correct_order": 2, "details": "Canada" },
-            { "correct_order": 5, "details": "Ireland" },
-            { "correct_order": 3, "details": "Australia" },
-            { "correct_order": 4, "details": "Mexico" },
-            { "correct_order": 1, "details": "Russia" }
+            { "correct_order": 2, "details": "Australia" },
+            { "correct_order": 4, "details": "Ireland" },
+            { "correct_order": 3, "details": "Mexico" },
+            { "correct_order": 1, "details": "Canada" },
+            { "correct_order": 0, "details": "Russia" }
         ]
     },
     {
         question: "Starting with the most put these languages in order of most spoken",
         answers: [
-            { "correct_order": 2, "details": "English" },
-            { "correct_order": 5, "details": "Arabic" },
-            { "correct_order": 3, "details": "Hindustani" },
-            { "correct_order": 4, "details": "Spanish" },
-            { "correct_order": 1, "details": "Mandarin Chinese" }
+            { "correct_order": 1, "details": "English" },
+            { "correct_order": 2, "details": "Hindustani" },
+            { "correct_order": 4, "details": "Arabic" },
+            { "correct_order": 0, "details": "Mandarin Chinese" },
+            { "correct_order": 3, "details": "Spanish" }
+            
         ]
     }
 ]
@@ -99,18 +100,49 @@ function checkAnswer() {
     document.getElementById("quizSubmit").classList.add("d-none");
     document.getElementById("nextQuestion").classList.remove("d-none");
 
+    let correctAnswer;
+    let answers = document.querySelectorAll(".answer")
+    for(let i = 0; i < answers.length; i++) {
+        for(let j = 0; j < myQuestions[counter].answers.length; j++){
+            console.log(myQuestions[counter].answers[j].correct_order);
+            if(myQuestions[counter].answers[j].correct_order == i) {
+                correctAnswer = myQuestions[counter].answers[j]
+                console.log(correctAnswer)
+            }
+        }
+        let score = 0;
+        if(answers[i].innerHTML == correctAnswer.details) {
+            console.log("correct")
+            $(answers[i]).addClass('green-border');
+
+            setTimeout(function () { 
+            $(answers[i]).removeClass('green-border');
+            }, 2000);
+            /* answers[i].forEach(element => {
+                score++;
+                console.log(score);
+            }); */
+        } else {
+            console.log("incorrect")
+            answers[i].classList.add("red-border");
+            setTimeout(function () { 
+            $(answers[i]).removeClass('red-border');
+            }, 2000);
+        }
+    }
+/*
     let score = 0;
-    if (answerOneContainer.firstElementChild = myQuestions.answers.correct_order("1")) {
+    if (answerOneContainer.firstElementChild["myQuestions[counter].answers[0].correct_order"] === ["1"]) {
         document.getElementById("container1").classList.add("green-border")
     } else {
         document.getElementById("container1").classList.add("red-border")
-    }
-};
+    }*/
+}; 
 
 // NEXT QUESTION FUNCTION
 
 document.getElementById("nextQuestion").onclick = function () { nextButton() };
-
+// sdocument.querySelectorAll(".answer").classList.remove("red-border", "green-border");
 function nextButton() {
     if (counter >= myQuestions.length) {
         counter = 0;
@@ -121,3 +153,5 @@ function nextButton() {
     document.getElementById("nextQuestion").classList.add("d-none");
     document.getElementById("quizSubmit").classList.remove("d-none");
 };
+
+console.log("Hello!")
