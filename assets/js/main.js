@@ -43,7 +43,7 @@ const myQuestions = [
             { "correct_order": 4, "details": "Arabic" },
             { "correct_order": 0, "details": "Mandarin Chinese" },
             { "correct_order": 3, "details": "Spanish" }
-            
+
         ]
     }
 ]
@@ -62,7 +62,7 @@ function buildQuiz() {
     answerTwo.innerHTML = myQuestions[counter].answers[1].details;
     answerThree.innerHTML = myQuestions[counter].answers[2].details;
     answerFour.innerHTML = myQuestions[counter].answers[3].details;
-    answerFive.innerHTML = myQuestions[counter].answers[4].details;    
+    answerFive.innerHTML = myQuestions[counter].answers[4].details;
 };
 
 // SWITCH ANSWERS FUNCTION
@@ -77,14 +77,14 @@ let answerContainers = {
 
 function swapAnswersContainer(switchButton, container1, container2) {
     document.getElementById(switchButton).addEventListener('click', () => {
-    $("#" + container1).children(":first").slideToggle('fast');
-    $("#" + container2).children(":first").slideToggle('fast', function () {
-        answerContainers[container2].appendChild(answerContainers[container1].firstElementChild);
-        answerContainers[container1].appendChild(answerContainers[container2].firstElementChild);
+        $("#" + container1).children(":first").slideToggle('fast');
+        $("#" + container2).children(":first").slideToggle('fast', function () {
+            answerContainers[container2].appendChild(answerContainers[container1].firstElementChild);
+            answerContainers[container1].appendChild(answerContainers[container2].firstElementChild);
+        });
+        $("#" + container1).children(":first").slideToggle('fast');
+        $("#" + container2).children(":first").slideToggle('fast');
     });
-    $("#" + container1).children(":first").slideToggle('fast');
-    $("#" + container2).children(":first").slideToggle('fast');
-});
 }
 
 swapAnswersContainer("switch1", "container1", "container2");
@@ -99,50 +99,46 @@ document.getElementById("quizSubmit").onclick = function () { checkAnswer() };
 function checkAnswer() {
     document.getElementById("quizSubmit").classList.add("d-none");
     document.getElementById("nextQuestion").classList.remove("d-none");
-
+    let score = 0;
     let correctAnswer;
     let answers = document.querySelectorAll(".answer")
-    for(let i = 0; i < answers.length; i++) {
-        for(let j = 0; j < myQuestions[counter].answers.length; j++){
+    for (let i = 0; i < answers.length; i++) {
+        for (let j = 0; j < myQuestions[counter].answers.length; j++) {
             console.log(myQuestions[counter].answers[j].correct_order);
-            if(myQuestions[counter].answers[j].correct_order == i) {
+            if (myQuestions[counter].answers[j].correct_order == i) {
                 correctAnswer = myQuestions[counter].answers[j]
                 console.log(correctAnswer)
+                
             }
         }
-        let score = 0;
-        if(answers[i].innerHTML == correctAnswer.details) {
+        let correctAnswers = (answers[i].innerHTML == correctAnswer.details)
+        if (correctAnswers) {
             console.log("correct")
             $(answers[i]).addClass('green-border');
-
-            setTimeout(function () { 
-            $(answers[i]).removeClass('green-border');
+            setTimeout(function () {
+                $(answers[i]).removeClass('green-border');
             }, 2000);
-            /* answers[i].forEach(element => {
-                score++;
-                console.log(score);
-            }); */
+            score++;
+
         } else {
             console.log("incorrect")
             answers[i].classList.add("red-border");
-            setTimeout(function () { 
-            $(answers[i]).removeClass('red-border');
-            }, 2000);
+            setTimeout(function () {
+                $(answers[i]).removeClass('red-border');
+            }, 2000); 
         }
+        document.getElementById("score-container").classList.remove("d-none")
+        document.getElementById("score-container").innerHTML = `SCORE: ${score}/5`;
     }
-/*
-    let score = 0;
-    if (answerOneContainer.firstElementChild["myQuestions[counter].answers[0].correct_order"] === ["1"]) {
-        document.getElementById("container1").classList.add("green-border")
-    } else {
-        document.getElementById("container1").classList.add("red-border")
-    }*/
-}; 
+
+};
 
 // NEXT QUESTION FUNCTION
 
+
+
 document.getElementById("nextQuestion").onclick = function () { nextButton() };
-// sdocument.querySelectorAll(".answer").classList.remove("red-border", "green-border");
+
 function nextButton() {
     if (counter >= myQuestions.length) {
         counter = 0;
@@ -150,8 +146,9 @@ function nextButton() {
     }
     counter++;
     buildQuiz();
+    document.getElementById("score-container").classList.add("d-none")
     document.getElementById("nextQuestion").classList.add("d-none");
     document.getElementById("quizSubmit").classList.remove("d-none");
 };
 
-console.log("Hello!")
+console.log("Hello2222!")

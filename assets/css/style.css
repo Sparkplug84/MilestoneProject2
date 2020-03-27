@@ -162,8 +162,8 @@ body {
 .quiz-submit,
 .next-question {
     position: relative;
-    left: 70%;
     margin-top: 10px;
+    float: right;
 }
 
 .next-question {
@@ -178,12 +178,26 @@ body {
 
 .green-border {
     border: 5px solid #78c178;
-    /* -webkit-animation: cssAnimation 5s forwards; 
-    animation: cssAnimation 5s forwards; */
 }
 
 .red-border {
     border: 5px solid #f77474;
+}
+
+#score-container {
+    width: 120px;
+    height: 40px;
+    border: #6ebaa4 solid 1px;
+    border-radius: 0.3rem;
+    background-color: #6ebaa4;
+    position: relative;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    float: left;
 }
 
 /*@keyframes cssAnimation {
@@ -256,7 +270,7 @@ a .fa-github {
     transform: translateY(10%);
     }
     .quiz-container {
-        width: 100vw;
+        width: 100%;
     }
     .answer-container {
         width: 85%;
@@ -264,14 +278,17 @@ a .fa-github {
     .answer{
         padding: 0 5px;
     }
-    .quiz-submit {
-        left: 50%;
+    .quiz-submit,
+    .nextQuestion {
+        position: relative;
+        float: right;
     }
     .quiz-question {
         display: table-cell; 
         vertical-align: middle; 
         text-align: center;
         line-height: 20px;
+        width: 100vw;
     }
 }
 
