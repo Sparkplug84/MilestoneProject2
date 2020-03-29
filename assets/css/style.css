@@ -160,7 +160,8 @@ body {
 }
 
 .quiz-submit,
-.next-question {
+.next-question,
+.finish-quiz {
     position: relative;
     margin-top: 10px;
     float: right;
@@ -173,6 +174,16 @@ body {
 
 .next-question:hover {
     background-color: #68a191;
+    color: white;
+}
+
+.finish-quiz {
+    background-color: #e7bd40;
+    color: white;
+}
+
+.finish-quiz:hover {
+    background-color: #e3b632;
     color: white;
 }
 

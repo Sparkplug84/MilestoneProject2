@@ -94,11 +94,17 @@ swapAnswersContainer("switch4", "container4", "container5");
 
 // CHECK ANSWERS FUNCTION
 
+let overallScore = 0;
+
 document.getElementById("quizSubmit").onclick = function () { checkAnswer() };
 
 function checkAnswer() {
     document.getElementById("quizSubmit").classList.add("d-none");
-    document.getElementById("nextQuestion").classList.remove("d-none");
+    if (counter >= myQuestions.length - 1) {
+        document.getElementById("finishQuiz").classList.remove("d-none");
+    } else {
+        document.getElementById("nextQuestion").classList.remove("d-none");
+    }
     let score = 0;
     let correctAnswer;
     let answers = document.querySelectorAll(".answer")
@@ -108,7 +114,7 @@ function checkAnswer() {
             if (myQuestions[counter].answers[j].correct_order == i) {
                 correctAnswer = myQuestions[counter].answers[j]
                 console.log(correctAnswer)
-                
+
             }
         }
         let correctAnswers = (answers[i].innerHTML == correctAnswer.details)
@@ -119,13 +125,14 @@ function checkAnswer() {
                 $(answers[i]).removeClass('green-border');
             }, 2000);
             score++;
+            overallScore++;
 
         } else {
             console.log("incorrect")
             answers[i].classList.add("red-border");
             setTimeout(function () {
                 $(answers[i]).removeClass('red-border');
-            }, 2000); 
+            }, 2000);
         }
         document.getElementById("score-container").classList.remove("d-none")
         document.getElementById("score-container").innerHTML = `SCORE: ${score}/5`;
@@ -134,8 +141,6 @@ function checkAnswer() {
 };
 
 // NEXT QUESTION FUNCTION
-
-
 
 document.getElementById("nextQuestion").onclick = function () { nextButton() };
 
@@ -151,4 +156,15 @@ function nextButton() {
     document.getElementById("quizSubmit").classList.remove("d-none");
 };
 
+// FINISH QUIZ FUNCTION
+
+document.getElementById("finishQuiz").onclick = function () { finishButton() };
+
+function finishButton() {
+    document.getElementById("score-container").innerHTML = `SCORE: ${overallScore}/${5*myQuestions.length}`;
+}
+
+
+console.log(myQuestions.answers[0].length);
+console.log("Question length = " + myQuestions.length);
 console.log("Hello2222!")
