@@ -175,7 +175,7 @@ function finishButton() {
     quiz.classList.add("d-none");
     gameOver.classList.remove("d-none");
     finalScore.innerHTML = `Score: ${overallScore}/${5*myQuestions.length}`;
-    if(overallScore < 5) {
+    if(overallScore < 6) {
         scoreComment.innerHTML = `Oh dear, I think we need to make an easier version for you and go and buy your self an atlas!`
     } else if (overallScore > 5 && overallScore < 10) {
         scoreComment.innerHTML = `Well, that was ok but I think you can do better. Stop binging on Netflex and try some National Geographic!`
