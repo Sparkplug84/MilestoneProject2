@@ -13,6 +13,8 @@
 
 <body>
 
+<!-- NAVBAR -->
+
 	<div class="container-fluid navbar-container">
 		<nav class="navbar navbar-expand-md navbar-dark">
 			<a class="navbar-brand hvr-grow" href="#">Order It!</a>
@@ -38,7 +40,11 @@
 		</nav>
 	</div>
 
-	<div id="callout" class="container-fluid jumbotron-container">
+    <!-- NAVBAR END -->
+
+    <!-- CALLOUT -->
+
+	<section id="callout" class="container-fluid jumbotron-container">
 		<div class="jumbotron">
 			<h1 class="display-4">Welcome to Order it!<i class="fas fa-sync callout-animation"></i></h1>
 			<p class="lead">Order It! is a fun and interactive quiz where you need to put the answers in the correct
@@ -48,9 +54,13 @@
 			<p>So dive in, give it a go and let's see what you can do.</p>
 			<a id="start-quiz" class="btn btn-primary btn-lg" href="#" role="button">Start the Quiz!</a>
 		</div>
-	</div>
+	</section>
 
-	<div id="quiz" class="quiz-container d-none">
+    <!-- CALLOUT END -->
+
+    <!-- QUIZ CONTAINER -->
+
+	<section id="quiz" class="quiz-container d-none">
 		<div id="question" class="quiz-question"></div>
 
 		<div id="container1" class="answer-container">
@@ -89,7 +99,30 @@
 		<button id="quizSubmit" class="quiz-submit btn btn-primary btn-lg">Check Answer</button>
         <button id="nextQuestion" class="next-question btn btn-lg d-none">Next Question</button>
         <button id="finishQuiz" class="finish-quiz btn btn-lg d-none">Finish Quiz</button>
-	</div>
+	</section>
+
+    <!-- QUIZ CONTAINER END -->
+
+    <!-- FINAL SCORE -->
+
+    <section id="gameOver" class="container-fluid jumbotron-container game-over d-none">
+        <div class="row jumbotron">
+            <div class="col-12">
+                <div class="score-header">
+                    <h1>Your Final Score</h1>
+                    <h3 id="finalScore" class="final-score"></h3>
+                    <br>
+                    <h4 id="scoreComment"></h4>
+                    <a id="restartQuiz" class="btn btn-primary btn-lg" href="#" role="button">Try Again</a>
+                    <a class="btn btn-primary btn-lg" href="index.html" role="button">Home Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL SCORE END -->
+
+    <!-- FOOTER -->
 
 	<footer class="container-fluid">
 		<div class="row">
@@ -109,7 +142,7 @@
 		</div>
 	</footer>
 
-
+    <!-- FOOTER END -->
 
 
 

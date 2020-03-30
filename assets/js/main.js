@@ -11,6 +11,17 @@ const answerTwoContainer = document.getElementById('container2');
 const answerThreeContainer = document.getElementById('container3');
 const answerFourContainer = document.getElementById('container4');
 const answerFiveContainer = document.getElementById('container5');
+const callout = document.getElementById('callout');
+const quiz = document.getElementById('quiz');
+const startQuiz = document.getElementById('start-quiz');
+const quizSubmit = document.getElementById('quizSubmit');
+const finishQuiz = document.getElementById('finishQuiz');
+const nextQuestion = document.getElementById('nextQuestion');
+const scoreContainer = document.getElementById('score-container');
+const gameOver = document.getElementById('gameOver');
+const finalScore = document.getElementById('finalScore');
+const scoreComment = document.getElementById('scoreComment');
+const restartQuiz = document.getElementById('restartQuiz');
 
 // QUIZ QUESTIONS
 
@@ -50,13 +61,13 @@ const myQuestions = [
 
 // BUILD QUIZ FUNCTION
 
-document.getElementById("start-quiz").onclick = function () { buildQuiz() };
+startQuiz.onclick = function () { buildQuiz() };
 
 let counter = 0;
 
 function buildQuiz() {
-    document.getElementById("callout").classList.add("d-none");
-    document.getElementById("quiz").classList.remove("d-none");
+    callout.classList.add("d-none");
+    quiz.classList.remove("d-none");
     quizQuestion.innerHTML = myQuestions[counter].question;
     answerOne.innerHTML = myQuestions[counter].answers[0].details;
     answerTwo.innerHTML = myQuestions[counter].answers[1].details;
@@ -96,14 +107,14 @@ swapAnswersContainer("switch4", "container4", "container5");
 
 let overallScore = 0;
 
-document.getElementById("quizSubmit").onclick = function () { checkAnswer() };
+quizSubmit.onclick = function () { checkAnswer() };
 
 function checkAnswer() {
-    document.getElementById("quizSubmit").classList.add("d-none");
+    quizSubmit.classList.add("d-none");
     if (counter >= myQuestions.length - 1) {
-        document.getElementById("finishQuiz").classList.remove("d-none");
+        finishQuiz.classList.remove("d-none");
     } else {
-        document.getElementById("nextQuestion").classList.remove("d-none");
+        nextQuestion.classList.remove("d-none");
     }
     let score = 0;
     let correctAnswer;
@@ -134,15 +145,15 @@ function checkAnswer() {
                 $(answers[i]).removeClass('red-border');
             }, 2000);
         }
-        document.getElementById("score-container").classList.remove("d-none")
-        document.getElementById("score-container").innerHTML = `SCORE: ${score}/5`;
+        scoreContainer.classList.remove("d-none")
+        scoreContainer.innerHTML = `SCORE: ${score}/5`;
     }
 
 };
 
 // NEXT QUESTION FUNCTION
 
-document.getElementById("nextQuestion").onclick = function () { nextButton() };
+nextQuestion.onclick = function () { nextButton() };
 
 function nextButton() {
     if (counter >= myQuestions.length) {
@@ -151,20 +162,37 @@ function nextButton() {
     }
     counter++;
     buildQuiz();
-    document.getElementById("score-container").classList.add("d-none")
-    document.getElementById("nextQuestion").classList.add("d-none");
-    document.getElementById("quizSubmit").classList.remove("d-none");
+    scoreContainer.classList.add("d-none")
+    nextQuestion.classList.add("d-none");
+    quizSubmit.classList.remove("d-none");
 };
 
 // FINISH QUIZ FUNCTION
 
-document.getElementById("finishQuiz").onclick = function () { finishButton() };
+finishQuiz.onclick = function () { finishButton() };
 
 function finishButton() {
-    document.getElementById("score-container").innerHTML = `SCORE: ${overallScore}/${5*myQuestions.length}`;
+    quiz.classList.add("d-none");
+    gameOver.classList.remove("d-none");
+    finalScore.innerHTML = `Score: ${overallScore}/${5*myQuestions.length}`;
+    if(overallScore < 5) {
+        scoreComment.innerHTML = `Oh dear, I think we need to make an easier version for you and go and buy your self an atlas!`
+    } else if (overallScore > 5 && overallScore < 10) {
+        scoreComment.innerHTML = `Well, that was ok but I think you can do better. Stop binging on Netflex and try some National Geographic!`
+    } else {
+        scoreComment.innerHTML = `Well done. Someone has been spying on the whole world! Don't worry, your secret is safe with me.`
+    }
+}
+
+restartQuiz.onclick = function () { tryAgain() };
+function tryAgain() {
+    gameOver.classList.add("d-none");
+    buildQuiz();
 }
 
 
-console.log(myQuestions.answers[0].length);
+
+
+console.log(overallScore);
 console.log("Question length = " + myQuestions.length);
-console.log("Hello2222!")
+console.log("Hello2222!");
