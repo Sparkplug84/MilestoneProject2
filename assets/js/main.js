@@ -58,6 +58,7 @@ const myQuestions = [
         ]
     }
 ]
+// let myQuestionsRandom = [];
 
 // BUILD QUIZ FUNCTION
 
@@ -68,6 +69,13 @@ let counter = 0;
 function buildQuiz() {
     callout.classList.add("d-none");
     quiz.classList.remove("d-none");
+    // for(let i in myQuestions) {
+    //     let randomIndex = Math.floor(Math.random() * myQuestions.length);
+    //     while(myQuestionsRandom.includes(myQuestions[randomIndex])) {
+    //         randomIndex = Math.floor(Math.random() * myQuestions.length)
+    //     }
+    //     myQuestionsRandom[i] = myQuestions[randomIndex];
+    // }
     quizQuestion.innerHTML = myQuestions[counter].question;
     answerOne.innerHTML = myQuestions[counter].answers[0].details;
     answerTwo.innerHTML = myQuestions[counter].answers[1].details;
@@ -75,7 +83,6 @@ function buildQuiz() {
     answerFour.innerHTML = myQuestions[counter].answers[3].details;
     answerFive.innerHTML = myQuestions[counter].answers[4].details;
 };
-
 // SWITCH ANSWERS FUNCTION
 
 let answerContainers = {
@@ -148,7 +155,6 @@ function checkAnswer() {
         scoreContainer.classList.remove("d-none")
         scoreContainer.innerHTML = `SCORE: ${score}/5`;
     }
-
 };
 
 // NEXT QUESTION FUNCTION
@@ -176,19 +182,21 @@ function finishButton() {
     gameOver.classList.remove("d-none");
     finalScore.innerHTML = `Score: ${overallScore}/${5*myQuestions.length}`;
     if(overallScore < 6) {
-        scoreComment.innerHTML = `Oh dear, I think we need to make an easier version for you and go and buy your self an atlas!`
+        scoreComment.innerHTML = `Oh dear, I think we need to make an easier version for you. You may also need to buy yourself an atlas!`
     } else if (overallScore > 5 && overallScore < 10) {
-        scoreComment.innerHTML = `Well, that was ok but I think you can do better. Stop binging on Netflex and try some National Geographic!`
+        scoreComment.innerHTML = `Well, that was ok but I think you can do better. Stop binging on Netflix and try some National Geographic!`
     } else {
         scoreComment.innerHTML = `Well done. Someone has been spying on the whole world! Don't worry, your secret is safe with me.`
     }
-}
+} 
 
-restartQuiz.onclick = function () { tryAgain() };
-function tryAgain() {
-    gameOver.classList.add("d-none");
-    buildQuiz();
-}
+
+// restartQuiz.onclick = function () { tryAgain() };
+// function tryAgain() {
+//     gameOver.classList.add("d-none");
+//     counter = ++counter % myQuestions.length;
+//     buildQuiz();
+// }
 
 
 
