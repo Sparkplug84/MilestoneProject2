@@ -89,6 +89,20 @@ body {
   }
 }
 
+.button-style {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    top: 80px;
+    background-color: #255F85;
+    display: inline-block;
+}
+
+.icon-style{
+    color: white;
+}
+
 /* Jumbotron End */
 
 /* Quiz Container */
