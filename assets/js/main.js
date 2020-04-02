@@ -57,7 +57,7 @@ const myQuestions = [
 
         ]
     }
-]
+];
 // let myQuestionsRandom = [];
 
 // BUILD QUIZ FUNCTION
@@ -82,7 +82,7 @@ function buildQuiz() {
     answerThree.innerHTML = myQuestions[counter].answers[2].details;
     answerFour.innerHTML = myQuestions[counter].answers[3].details;
     answerFive.innerHTML = myQuestions[counter].answers[4].details;
-};
+}
 // SWITCH ANSWERS FUNCTION
 
 let answerContainers = {
@@ -91,7 +91,7 @@ let answerContainers = {
     "container3": answerThreeContainer,
     "container4": answerFourContainer,
     "container5": answerFiveContainer,
-}
+};
 
 function swapAnswersContainer(switchButton, container1, container2) {
     document.getElementById(switchButton).addEventListener('click', () => {
@@ -125,19 +125,19 @@ function checkAnswer() {
     }
     let score = 0;
     let correctAnswer;
-    let answers = document.querySelectorAll(".answer")
+    let answers = document.querySelectorAll(".answer");
     for (let i = 0; i < answers.length; i++) {
         for (let j = 0; j < myQuestions[counter].answers.length; j++) {
             console.log(myQuestions[counter].answers[j].correct_order);
             if (myQuestions[counter].answers[j].correct_order == i) {
-                correctAnswer = myQuestions[counter].answers[j]
-                console.log(correctAnswer)
+                correctAnswer = myQuestions[counter].answers[j];
+                console.log(correctAnswer);
 
             }
         }
-        let correctAnswers = (answers[i].innerHTML == correctAnswer.details)
+        let correctAnswers = (answers[i].innerHTML == correctAnswer.details);
         if (correctAnswers) {
-            console.log("correct")
+            console.log("correct");
             $(answers[i]).addClass('green-border');
             setTimeout(function () {
                 $(answers[i]).removeClass('green-border');
@@ -146,16 +146,16 @@ function checkAnswer() {
             overallScore++;
 
         } else {
-            console.log("incorrect")
+            console.log("incorrect");
             answers[i].classList.add("red-border");
             setTimeout(function () {
                 $(answers[i]).removeClass('red-border');
             }, 2000);
         }
-        scoreContainer.classList.remove("d-none")
+        scoreContainer.classList.remove("d-none");
         scoreContainer.innerHTML = `SCORE: ${score}/5`;
     }
-};
+}
 
 // NEXT QUESTION FUNCTION
 
@@ -168,27 +168,28 @@ function nextButton() {
     }
     counter++;
     buildQuiz();
-    scoreContainer.classList.add("d-none")
+    scoreContainer.classList.add("d-none");
     nextQuestion.classList.add("d-none");
     quizSubmit.classList.remove("d-none");
-};
+}
 
 // FINISH QUIZ FUNCTION
 
 finishQuiz.onclick = function () { finishButton() };
 
 function finishButton() {
+    $(window).scrollTop(0);
     quiz.classList.add("d-none");
     gameOver.classList.remove("d-none");
-    finalScore.innerHTML = `Score: ${overallScore}/${5*myQuestions.length}`;
-    if(overallScore < 6) {
-        scoreComment.innerHTML = `Oh dear, I think we need to make an easier version for you. You may also need to buy yourself an atlas!`
+    finalScore.innerHTML = `Score: ${overallScore}/${5 * myQuestions.length}`;
+    if (overallScore < 6) {
+        scoreComment.innerHTML = `Oh dear, I think we need to make an easier version for you. You may also need to buy yourself an atlas!`;
     } else if (overallScore > 5 && overallScore < 10) {
-        scoreComment.innerHTML = `Well, that was ok but I think you can do better. Stop binging on Netflix and try some National Geographic!`
+        scoreComment.innerHTML = `Well, that was ok but I think you can do better. Stop binging on Netflix and try some National Geographic!`;
     } else {
-        scoreComment.innerHTML = `Well done. Someone has been spying on the whole world! Don't worry, your secret is safe with me.`
+        scoreComment.innerHTML = `Well done. Someone has been spying on the whole world! Don't worry, your secret is safe with me.`;
     }
-} 
+}
 
 
 // restartQuiz.onclick = function () { tryAgain() };
@@ -199,7 +200,7 @@ function finishButton() {
 // }
 
 
-
+/*jshint esversion: 6 */
 
 console.log(overallScore);
 console.log("Question length = " + myQuestions.length);

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,700&display=swap');
 
 body {
-    font-family: "Ubuntu", sans-serif;
     background-color: #E9724C;
 }
 
@@ -10,10 +9,6 @@ body {
 .navbar-container {
     padding: 0;
     margin: 0;
-}
-
-.active {
-    background-color: orange:
 }
 
 .navbar {
@@ -31,7 +26,7 @@ body {
     border: none;
 }
 
-/* Grow */
+/* Grow animation for links*/
 .hvr-grow {
     display: inline-block;
     vertical-align: middle;
@@ -66,7 +61,8 @@ body {
     padding: 0;
 }
 
-.mb-4, .my-4 {
+.mb-4, 
+.my-4 {
     display: none;
 }
 
@@ -150,12 +146,6 @@ body {
     float: right;
 }
 
-.first-button,
-.last-button {
-    position: relative;
-    top: 25px;
-}
-
 .btn-style {
     height: 50px;
     width: 50px;
@@ -212,7 +202,6 @@ body {
 #score-container {
     width: 120px;
     height: 40px;
-    border: #6ebaa4 solid 1px;
     border-radius: 0.3rem;
     background-color: #6ebaa4;
     position: relative;
@@ -224,17 +213,6 @@ body {
     font-weight: 500;
     float: left;
 }
-
-/*@keyframes cssAnimation {
-    0%   {opacity: 1;}
-    90%  {opacity: 1;}
-    100% {opacity: 0;}
-}
-@-webkit-keyframes cssAnimation {
-    0%   {opacity: 1;}
-    90%  {opacity: 1;}
-    100% {opacity: 0;}
-} */
 
 /* Quiz Container End */
 

@@ -81,13 +81,42 @@ For the font I wanted to go with something fun and playful. I used Google fonts 
 I took the link from Google Fonts and pasted it into my CSS file to become the default font for the whole website with a backup font of 'Sans-serif' in the event that the browers that is being used to play the game is unable to display the 'Ubuntu' font.
 
 ## Technologies Used
-* HTML 
-* CSS 
-* Bootstrap 
-* JavaScript 
-* JQuery
+* GitPod - used as my IDE for the development of this website.
+* HTML - used to write the code for the structure and layout of the website/game.
+* CSS - used to style all the HTML elements.
+* [Bootstrap](https://getbootstrap.com/) - The website is using Bootstrap4 as the basic structure, navbar and footer of the website and to increase the responsiveness of the website.
+* JavaScript - Used to write scripts for all functions within the game and buttons on the website. All interactivity of the website uses JavaScript.
+* JQuery - Used to make it easiler to traverse through elements of the DOM and manipulate them.
+* Popper.JS - Used to make the navbar responsive.
+* [FontAwesome](https://fontawesome.com/) - Used to display icons in my callout, quiz switch buttons and the social media icons in my footer.
+* [Google Fonts](https://fonts.google.com/)- The website uses 1 Google font and the Url is imported in the CSS file.
+* [Coolors.co](https://coolors.co/) - Used this to find a colour scheme for my website.
+
 
 ## Testing
 ### Code Validation
+Several times during the development process I tested my code in various code online validation programs.
+For HTML I used [W3 Markup Validation Service](https://validator.w3.org/#validate_by_input). I pasted my entire HTML pages one at a time into the input field and the code was checked. I received several warnings about my code. Warnings are things that can be changed in the code but it's also not necessaary. For example I had several heading elements that were empty. This was an intentional choice because the JavaScript code would  later fill the inner HTML when a certain point in the code had been reached. I also received a warning that my script tag contained an unnecessary type attribute so I removed it. I did not receive any errors.
+
+For CSS I used [W3 CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input). Again I pasted my CSS file into the input field and the code was checked. I received 2 errors. Both of which referenced a style I had created for a class that no longer was required but I forgot to remove previously. The style was then removed. I also received several warnings. For example a style where I had stated the background-color and border to the same colour, which is unnecessary. Other warnings included several unknown vendor extensions. These were mostly part of stlyes that I had from external sources so I left the extensions in.
+
+For JavaScript validation, within the Gitpod environment there is a 'Problems' tab which I checked often during the development. Any errors in the code would appear immediately so I was able to address any issue in the JavaScript right away. The warnings I received and addressed were about expected or unexpected characters throughout the code that I needed to remove or add in. This was useful to remind me to format my code correctly during writing. For external validation I used [JS Hint](https://jshint.com/). Again I pasted my code into the input and it was checked. I did not receive any errors as I had already fixed all errors through the Gitpod 'Problems' explained previously. I did however receive a lot of warnings. These mostly consisted of missing or unnecessary semicolons so I was able to address that easily. Other warnings included the use of 'const' and 'let as these are modern JavaScript variables and may not work with old browsers. I ignored these warnings as during my own development testing and friends and family testing I didn't come accross any browsers that had any difficulty running the code. Another warning I received was the use of an outer scoped variable inside a function declared within a loop. This may be confusing semantics. I choose to ignore this as it was only a warning and the variable was defined in the line of code directly about the function. I did not see this as a problem.'
 
 ### General Testing
+
+##Deployment 
+
+The code environment was taken from a code institute Gitpod template that is stored on Github. This is then exported from Github to my own Gitpod account using the ‘Gitpod’ button. The template then opens up on my own Gitpod account with a boiler plate to start coding including links for Bootstrap, jQuery, Popper and Font Awesome so I didn’t need to look for the CDN’s myself. 
+After every session of coding I committed my work using the Git terminal in Gitpod. Every commit has a message attached to clearly explain the changes that were made since the last commit. After the commit, the code is also then pushed to my Github account, also using the Git terminal.
+
+###Hosting my site on Github pages
+
+These ther the steps I took to host the live website through Github Pages:
+* Opened up GitHub in the browser.
+* Signed in using username and password.
+* Selected Milestone Project 2 from my repositories.
+* In the top navigation selected 'settings'.
+* Scrolled down to the GitHub Pages area.
+* Selected 'Master Branch' from the 'Source' dropdown menu.
+* Clicked to confirm my selection.
+* Your site is published https://sparkplug84.github.io/MilestoneProject2/
