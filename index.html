@@ -8,12 +8,12 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/sandstone/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<title>Title</title>
+	<title>Order It! Geography Quiz Game</title>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+	<!-- NAVBAR -->
 
 	<div class="container-fluid navbar-container">
 		<nav class="navbar navbar-expand-md navbar-dark">
@@ -40,9 +40,9 @@
 		</nav>
 	</div>
 
-    <!-- NAVBAR END -->
+	<!-- NAVBAR END -->
 
-    <!-- CALLOUT -->
+	<!-- CALLOUT -->
 
 	<section id="callout" class="container-fluid jumbotron-container">
 		<div class="jumbotron">
@@ -50,14 +50,17 @@
 			<p class="lead">Order It! is a fun and interactive quiz where you need to put the answers in the correct
 				order.
 			</p>
-			<p>Instructions: Once you click the 'START THE QUIZ' button below the first question will appear with 5 answers. Using the <button class="button-style"><i class="fas fa-sync icon-style"></i></button> buttons you need to put the answers in the correct order. Once your're satisfied with the order click the 'CHECK ANSWERS' button and your score along with your correct answers will be revealed. Good luck!</p>
+			<p>Instructions: Once you click the 'START THE QUIZ' button below the first question will appear with 5
+				answers. Using the <button class="button-style"><i class="fas fa-sync icon-style"></i></button> buttons
+				you need to put the answers in the correct order. Once your're satisfied with the order click the 'CHECK
+				ANSWERS' button and your score along with your correct answers will be revealed. Good luck!</p>
 			<a id="start-quiz" class="btn btn-primary btn-lg" href="#" role="button">Start the Quiz!</a>
 		</div>
 	</section>
 
-    <!-- CALLOUT END -->
+	<!-- CALLOUT END -->
 
-    <!-- QUIZ CONTAINER -->
+	<!-- QUIZ CONTAINER -->
 
 	<section id="quiz" class="quiz-container d-none">
 		<div id="question" class="quiz-question"></div>
@@ -93,35 +96,35 @@
 		<div id="container5" class="answer-container">
 			<div id="ans5" class="answer"></div>
 		</div>
-        
-        <div id="score-container" class="d-none"></div>
+
+		<div id="score-container" class="d-none"></div>
 		<button id="quizSubmit" class="quiz-submit btn btn-primary btn-lg">Check Answer</button>
-        <button id="nextQuestion" class="next-question btn btn-lg d-none">Next Question</button>
-        <button id="finishQuiz" class="finish-quiz btn btn-lg d-none">Finish Quiz</button>
+		<button id="nextQuestion" class="next-question btn btn-lg d-none">Next Question</button>
+		<button id="finishQuiz" class="finish-quiz btn btn-lg d-none">Finish Quiz</button>
 	</section>
 
-    <!-- QUIZ CONTAINER END -->
+	<!-- QUIZ CONTAINER END -->
 
-    <!-- FINAL SCORE -->
+	<!-- FINAL SCORE -->
 
-    <section id="gameOver" class="container-fluid jumbotron-container game-over d-none">
-        <div class="row jumbotron">
-            <div class="col-12">
-                <div class="score-header">
-                    <h1>Your Final Score</h1>
-                    <h3 id="finalScore" class="final-score"></h3>
-                    <br>
-                    <h4 id="scoreComment"></h4>
-                    <!-- <a id="restartQuiz" class="btn btn-primary btn-lg" href="#" role="button">Try Again</a> -->
-                    <a class="btn btn-primary btn-lg" href="index.html" role="button">Home Page</a>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section id="gameOver" class="container-fluid jumbotron-container game-over d-none">
+		<div class="row jumbotron">
+			<div class="col-12">
+				<div class="score-header">
+					<h1>Your Final Score</h1>
+					<h3 id="finalScore" class="final-score"></h3>
+					<br>
+					<h4 id="scoreComment"></h4>
+					<a id="restartQuiz" class="btn btn-primary btn-lg" href="#" role="button">Try Again</a>
+					<a class="btn btn-primary btn-lg" href="index.html" role="button">Home Page</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <!-- FINAL SCORE END -->
+	<!-- FINAL SCORE END -->
 
-    <!-- FOOTER -->
+	<!-- FOOTER -->
 
 	<footer class="container-fluid">
 		<div class="row">
@@ -141,15 +144,17 @@
 		</div>
 	</footer>
 
-    <!-- FOOTER END -->
+	<!-- FOOTER END -->
 
 
 
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/questions.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
+
 </body>
 
 </html>

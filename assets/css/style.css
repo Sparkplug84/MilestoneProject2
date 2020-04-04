@@ -74,18 +74,6 @@ body {
     animation-delay: 1s;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg) scale(0.8)
-  }
-  50% {
-    transform: rotate(45deg) scale(0.8)
-  }
-  100% {
-    transform: rotate(0deg) scale(0.8)
-  }
-}
-
 .button-style {
     height: 30px;
     width: 30px;
@@ -111,6 +99,7 @@ body {
     background-color: white;
     margin: 50px auto;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .answer,
@@ -120,6 +109,7 @@ body {
     margin-bottom: 5px;
     text-align: center;
     line-height: 100px;
+    border-radius: 10px;
 }
 
 .answer-container {
@@ -162,6 +152,10 @@ body {
     margin: 0 auto;
     font-size: 20px;
     color: white;
+}
+
+.btn-style:hover {
+    animation: rotate2 0.8s linear;
 }
 
 .quiz-submit,
@@ -252,6 +246,34 @@ a .fa-github {
 
 /** Footer End **/
 
+/** Key Frames **/
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.8)
+  }
+  50% {
+    transform: rotate(45deg) scale(0.8)
+  }
+  100% {
+    transform: rotate(0deg) scale(0.8)
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0deg)
+  }
+  50% {
+    transform: rotate(45deg)
+  }
+  100% {
+    transform: rotate(0deg)
+  }
+}
+
+/** Key Frames End **/
+
 /* Media Queries*/
 
 @media (max-width: 576px) {
@@ -277,7 +299,7 @@ a .fa-github {
         width: 100%;
     }
     .answer-container {
-        width: 85%;
+        width: 83%;
     }
     .answer{
         padding: 0 5px;

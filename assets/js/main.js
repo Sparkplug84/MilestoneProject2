@@ -23,65 +23,35 @@ const finalScore = document.getElementById('finalScore');
 const scoreComment = document.getElementById('scoreComment');
 const restartQuiz = document.getElementById('restartQuiz');
 
-// QUIZ QUESTIONS
-
-const myQuestions = [
-    {
-        question: "Starting with the most put these countries in order of total population",
-        answers: [
-            { "correct_order": 4, "details": "Ireland" },
-            { "correct_order": 1, "details": "United States" },
-            { "correct_order": 2, "details": "Russia" },
-            { "correct_order": 0, "details": "China" },
-            { "correct_order": 3, "details": "United Kingdom" }
-        ]
-    },
-    {
-        question: "Starting with the most put these countries in order of size",
-        answers: [
-            { "correct_order": 2, "details": "Australia" },
-            { "correct_order": 4, "details": "Ireland" },
-            { "correct_order": 3, "details": "Mexico" },
-            { "correct_order": 1, "details": "Canada" },
-            { "correct_order": 0, "details": "Russia" }
-        ]
-    },
-    {
-        question: "Starting with the most put these languages in order of most spoken",
-        answers: [
-            { "correct_order": 1, "details": "English" },
-            { "correct_order": 2, "details": "Hindustani" },
-            { "correct_order": 4, "details": "Arabic" },
-            { "correct_order": 0, "details": "Mandarin Chinese" },
-            { "correct_order": 3, "details": "Spanish" }
-
-        ]
-    }
-];
-// let myQuestionsRandom = [];
 
 // BUILD QUIZ FUNCTION
 
+let myQuestionsRandom = [];
 startQuiz.onclick = function () { buildQuiz() };
-
 let counter = 0;
+
+function randomiseQuestions() {
+    myQuestionsRandom = [];
+    for (let i in myQuestions) {
+        let randomIndex = Math.floor(Math.random() * myQuestions.length);
+        while (myQuestionsRandom.includes(myQuestions[randomIndex])) {
+            randomIndex = Math.floor(Math.random() * myQuestions.length)
+        }
+        myQuestionsRandom[i] = myQuestions[randomIndex];
+    }
+}
+randomiseQuestions();
 
 function buildQuiz() {
     callout.classList.add("d-none");
     quiz.classList.remove("d-none");
-    // for(let i in myQuestions) {
-    //     let randomIndex = Math.floor(Math.random() * myQuestions.length);
-    //     while(myQuestionsRandom.includes(myQuestions[randomIndex])) {
-    //         randomIndex = Math.floor(Math.random() * myQuestions.length)
-    //     }
-    //     myQuestionsRandom[i] = myQuestions[randomIndex];
-    // }
-    quizQuestion.innerHTML = myQuestions[counter].question;
-    answerOne.innerHTML = myQuestions[counter].answers[0].details;
-    answerTwo.innerHTML = myQuestions[counter].answers[1].details;
-    answerThree.innerHTML = myQuestions[counter].answers[2].details;
-    answerFour.innerHTML = myQuestions[counter].answers[3].details;
-    answerFive.innerHTML = myQuestions[counter].answers[4].details;
+
+    quizQuestion.innerHTML = myQuestionsRandom[counter].question;
+    answerOne.innerHTML = myQuestionsRandom[counter].answers[0].details;
+    answerTwo.innerHTML = myQuestionsRandom[counter].answers[1].details;
+    answerThree.innerHTML = myQuestionsRandom[counter].answers[2].details;
+    answerFour.innerHTML = myQuestionsRandom[counter].answers[3].details;
+    answerFive.innerHTML = myQuestionsRandom[counter].answers[4].details;
 }
 // SWITCH ANSWERS FUNCTION
 
@@ -127,10 +97,10 @@ function checkAnswer() {
     let correctAnswer;
     let answers = document.querySelectorAll(".answer");
     for (let i = 0; i < answers.length; i++) {
-        for (let j = 0; j < myQuestions[counter].answers.length; j++) {
-            console.log(myQuestions[counter].answers[j].correct_order);
-            if (myQuestions[counter].answers[j].correct_order == i) {
-                correctAnswer = myQuestions[counter].answers[j];
+        for (let j = 0; j < myQuestionsRandom[counter].answers.length; j++) {
+            console.log(myQuestionsRandom[counter].answers[j].correct_order);
+            if (myQuestionsRandom[counter].answers[j].correct_order == i) {
+                correctAnswer = myQuestionsRandom[counter].answers[j];
                 console.log(correctAnswer);
 
             }
@@ -192,16 +162,18 @@ function finishButton() {
 }
 
 
-// restartQuiz.onclick = function () { tryAgain() };
-// function tryAgain() {
-//     gameOver.classList.add("d-none");
-//     counter = ++counter % myQuestions.length;
-//     buildQuiz();
-// }
+restartQuiz.onclick = function () { tryAgain() };
+function tryAgain() {
+    gameOver.classList.add("d-none");
+    counter = 0;
+    overallScore = 0;
+    randomiseQuestions();
+    buildQuiz();
+    scoreContainer.classList.add("d-none");
+    nextQuestion.classList.add("d-none");
+    quizSubmit.classList.remove("d-none");
+    finishQuiz.classList.add("d-none");
+}
 
 
 /*jshint esversion: 6 */
-
-console.log(overallScore);
-console.log("Question length = " + myQuestions.length);
-console.log("Hello2222!");
