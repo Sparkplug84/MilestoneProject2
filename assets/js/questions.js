@@ -1,4 +1,4 @@
-// QUIZ QUESTIONS
+// QUIZ QUESTIONS - This is a seperate JS file, dedicated just for the quiestions of the quiz
 
 const myQuestions = [
     {

@@ -27,10 +27,13 @@ const restartQuiz = document.getElementById('restartQuiz');
 // BUILD QUIZ FUNCTION
 
 let myQuestionsRandom = [];
-startQuiz.onclick = function () { buildQuiz() };
 let counter = 0;
 
+startQuiz.onclick = function () { buildQuiz() };
 function randomiseQuestions() {
+    // This function is used to put the myQuestions array in a random order by putting the array objects
+    // into a new myQuestionsRandom array in a random order created by a randomIndex variable
+    // This results in the order of the questions being randomised with every new game
     myQuestionsRandom = [];
     for (let i in myQuestions) {
         let randomIndex = Math.floor(Math.random() * myQuestions.length);
@@ -43,6 +46,8 @@ function randomiseQuestions() {
 randomiseQuestions();
 
 function buildQuiz() {
+    // This function is used to push the question and answers from 
+    // the new myQuestionsRandom array into the HTML quiz form
     callout.classList.add("d-none");
     quiz.classList.remove("d-none");
 
@@ -64,6 +69,8 @@ let answerContainers = {
 };
 
 function swapAnswersContainer(switchButton, container1, container2) {
+    // This function is used to switch the position of the answers in the HTML quiz form
+    // This 1 function is applied to all 4 switch buttons
     document.getElementById(switchButton).addEventListener('click', () => {
         $("#" + container1).children(":first").slideToggle('fast');
         $("#" + container2).children(":first").slideToggle('fast', function () {
@@ -87,6 +94,8 @@ let overallScore = 0;
 quizSubmit.onclick = function () { checkAnswer() };
 
 function checkAnswer() {
+    // This function will check if the answers are in the correct order after user input.
+    // The first part of the function is to check if the last object in the array has been reached
     quizSubmit.classList.add("d-none");
     if (counter >= myQuestions.length - 1) {
         finishQuiz.classList.remove("d-none");
@@ -96,6 +105,8 @@ function checkAnswer() {
     let score = 0;
     let correctAnswer;
     let answers = document.querySelectorAll(".answer");
+    // The second part of the function is to iterate through the order of the answers after the user input and 
+    // iterate through the order of the answers in myQuestionsRandom array
     for (let i = 0; i < answers.length; i++) {
         for (let j = 0; j < myQuestionsRandom[counter].answers.length; j++) {
             console.log(myQuestionsRandom[counter].answers[j].correct_order);
@@ -107,6 +118,7 @@ function checkAnswer() {
         }
         let correctAnswers = (answers[i].innerHTML == correctAnswer.details);
         if (correctAnswers) {
+            // This if statement adds a green or red border to the answers depending on whether they are correct or not
             console.log("correct");
             $(answers[i]).addClass('green-border');
             setTimeout(function () {
@@ -132,6 +144,8 @@ function checkAnswer() {
 nextQuestion.onclick = function () { nextButton() };
 
 function nextButton() {
+    // This function returns the whole loop back to the buildQuiz function, which will then display the second question
+    // as the counter is incremented here by 1.
     if (counter >= myQuestions.length) {
         counter = 0;
         return;
@@ -148,6 +162,8 @@ function nextButton() {
 finishQuiz.onclick = function () { finishButton() };
 
 function finishButton() {
+    // This function is for when the array of objects reaches the end. The overall score of all questions combined
+    //  will be displayed here along with a comment depending on how good or bad the score is.
     $(window).scrollTop(0);
     quiz.classList.add("d-none");
     gameOver.classList.remove("d-none");
@@ -164,6 +180,8 @@ function finishButton() {
 
 restartQuiz.onclick = function () { tryAgain() };
 function tryAgain() {
+    // When the final score is revealed the option will appear to try again immediately. This was achieved by resetting
+    // the counter ad averallScore and initialising the randomiseQuestions and buildQuiz functions again.
     gameOver.classList.add("d-none");
     counter = 0;
     overallScore = 0;

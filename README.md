@@ -66,9 +66,11 @@ My goal for the website was to make it simple and fun. I want it to be like an a
 
 ### Overall Structure
 
+I wanted to create a  with a logo in the top left of the navbar to bring the user back to the homepage along with some other game links and a feedback form on the right side of the navbar. These links would collapse into a dropdown button on smaller screens and not necessarily be active at this point in the porject. More of a future feature for the website. At the bottom the footer contained 3 columns with social links and copyright information. My aim was just to use the index.html page only to contain all the elements and styles. I would then use JavaScript to manipulate the DOM and hide and display different elements at different times of the quiz. This would be the best way to do it to get immediate functions taking place throughout the quiz so no waiting times for the user.
+
 ## Sketelon
 I used the Balsamiq program for the wireframes and attached them to the directory in assets. The original idea is still recognizable from the finished application. There have obviously been some design changes along the way but the wireframe is useful to have to put the idea in your head down on paper before you start coding. The wireframes can also be view her below.
-Wireframe 1
+[Wireframe 1](wireframes/MS2CalloutHomePageDesktop.png)
 Wireframe 2
 Wireframe 3
 Wireframe 4
@@ -114,7 +116,7 @@ Through my own testing and with views of friends and family, I have fixed a few 
 
 ### Testing in different browsers
 
-I used Google Chrome as my main browser test as I was constantly using the Chrome developer tools to view and adjust my code. I also regularly tested the website on my phone, also using Google Chrome. I occasionally checked Firefox on the laptop and used friends and family to test on ipad and iphones. I didn't find any specific issues.
+I used Google Chrome as my main browser test as I was constantly using the Chrome developer tools to view and adjust my code. I also regularly tested the website on my phone, also using Google Chrome. I occasionally checked Firefox on the laptop. I sent the URL to friends and family to test on ipads(5th generation or younger) and iphones(8 or younger) along with Samsung Galaxy(S9 or younger) and Saumsung Galaxy Tab(S3 or younger). I didn't find or hear any specific issues from my own testing or from friends and family.
 
 ### General Testing and developing throughout the process
 
@@ -150,7 +152,41 @@ All of the above goals were achieved by writing the code, running it in the brow
 
 ### Issues found and solved
 
+1. * **Issue** - From friends and family feedback, I learned that some people were not completely sure how the quiz worked.
+   * **Fix** - I added some additional instructions on the homepage along with a copy of the switch button to make it clear to people that this was to be used to switch the answers around into the desired order.
+   * **Result** -  Much clearer idea for the user on how to work the quiz.
 
+2. * **Issue** - The quiz only displayed the first question.
+   * **Fix** - At the start I could only get the first question to appear in the quiz form. I originally thought of using a forEach method but was advised from a code Institute tudor that this would be difficult as my quiz required a lot of user input between all the steps. For example, clicking the 'Check Answers' and 'Next Questions' button to get back to the start of the loop. In this case I used a global counter variable instead which is set to 0 and increments by 1 when the 'Next Question' button is click, therefore instruction the JavaScript to go to the second question is the array.
+   * **Result** - The questions are all displayed in array order after user input.
+
+3. * **Issue** - When the answers switch positions, only the text changed.
+   * **Fix** - I added an animation before and after the answers changed. It is a slideToggle animation giving the impression that the 2 elements involved in the switch are shutters going up, the answers then change and the shutter goes down again revealing the answers in their switched positions. I needed some help from the Code Institute tudor for this one as I wasn't sure how to apply the animation to my code. They advised me to create 2 animations, one before and the other after the switch to create the best effect.
+   * **Result** - A nice smooth transition of the 2 elements answers involved, switchng places so the user can clearly see what has happened when they click the 'switch' buttons.
+
+4. * **Issue** - Switch answers function was duplicated. I had written 1 function for each button.
+   * **Fix** - I had initially written the function for the first 2 answers and then copied the code and pasted it for the other 3 switch buttons, changing only a few parameters within the function each time. My mentor advised that this is not good practised because if I needed to change anything in the future I would have to go through all switch functions seperately and change them all. There was a way to reduce all the functions into 1 function which can then be dynamically applied to all switch buttons. He talked me through the process of passing different parameters into the function, and then running the function after, one time for each switch button where the different parameters would again be passed in for the seperate buttons.
+   * **Result** - A much cleaner and condensed piece of code that is easier to understand.
+
+5. * **Issue** - When I added the temporary green and red borders to the correct and incorrect answers, the whole element disappeared along with the border after 2 seconds.
+   * **Fix** - When the 'Check Answers' button is clicked I wanted to add green and red borders to the correct and incorrect answers but just for 2 seconds to give the player a sneak peak of the answers they gave correctly and incorrectly. Initially I had added green and red border CSS classes with a CSS animation added for the timing effect. However when the 2 seconds had passed the whole element with the grey background and the answers also disappeared along with the border. I did some research on the internet to see if this could be done in JavaScript instead of CSS. I found there was a timeOut function that could be applied after the addClass function so I added that in with a 2 second delay before removing the class after. That gave me the effect I was looking for and the original answer element still remained.
+   * **Result** - When the 'Check Answer' button is clicked the user gets a flash of red and green borders to indicate which answers they have correct and incorrect. I added this temporary effect so they user could not memorise the answers. This gives the quiz more replay value.
+
+6. * **Issue** - When quiz was finished, the overall score appeared in the same element as the question score.
+   * **Fix** - During family and friends testing I received feedback that when the final score appeared they almost didn't notice as the question score updated to reveal the overall score. I decided to create a new element to show the overall score and that the quiz form would disappear. This gave a clearer impression for the user as to what they had achieved in the quiz. In this final score container I also later added some different comments, depending on what score the user got. I made further improvements to this final score element adding a 'Try Again' so the player could start again immediately and also a 'Homepage' button.
+   * **Result** - Improved user experience and design
+
+7. * **Issue** - When 'Try Again' button at the end of the quiz was clicked, it returned to the previous question of the quiz.
+   * **Fix** - To fix this I needed to reset the global counter to 0 and overallScore to 0. I had not done this yet so the previous question was displaying everytime. Also the 'Finish Quiz' button was still there. I had not yet removed this class and added the 'Check Answers' button. I fixed all of these issues.
+   * **Result** - When 'Try Again' button was clicked the quiz started again, from the first question of the array and the overall score was reset to 0.
+
+8. * **Issue** - Order of questions was the same for every play through. Decreases replay value of the game.
+   * **Fix** - From my own extensive testing of the game I thought that the order being the same for every play through may be a little predictable for replay value of the game and I wanted to randomise the order of the myQuestions array. To achieve this I did some research on the internet and found a method that I could apply to my own situation. Firstly I needed to create and empty array (myQuestionsRandom), which would later contain the myQuestions array in a random order. Before that though I needed to creat a rondom index which takes in the length of the myQuestions array in index form and randomises the numbers using a Math.random function. This index is then applied to the array (myQuestions[i]) and then pushed into the empty array of myQuestionsRandom, creating a random order of the questions. Initially though I still had some issues with this function in that it only gave me a random question for the first question and did not go to the next question and did not assess the answers correctly for that first question. After consulting with my mentor reguarding this he spotteed that I had not stated the correct array in my check answer function further down in the code. That fixed the answer problem. He also advised me to move the randomiseQuestions function outside and before the buildQuiz function. I did this but kept it inside the startQuiz function meaning the randomiseQuestions function was initialised first before the buildQuiz function then drew the questions from the new myQuestionsRandom array. The myQuestionsRandom and buildQuiz function were later also initialised within the restartQuiz function in the same order.
+   * **Result** - With every play through from the homepage and try again after the quiz, the order of the questions is different increasing the replay value of the game.
+
+9. * **Issue** - I recevied feedback that when the final score appeared, it was out of view slightly and too high up the page.
+   * **Fix** - All the elements are disappearing and on the same page so people had scrolled down to the bottom of the quiz form previously displayed to see their score for that question so when the final score appeared the page was still scrolled doen to the bottom so the users could not immediately see their final score without scrolling back up. I added a jQuery method $(window).scrollTop(0); within the finishQuiz function.
+   * **Result** - When the final score appears the page automatically scrolls to the top displaying the final score in the middle of the screen.
 
 ## Deployment 
 
