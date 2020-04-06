@@ -70,10 +70,10 @@ I wanted to create a  with a logo in the top left of the navbar to bring the use
 
 ## Sketelon
 I used the Balsamiq program for the wireframes and attached them to the directory in assets. The original idea is still recognizable from the finished application. There have obviously been some design changes along the way but the wireframe is useful to have to put the idea in your head down on paper before you start coding. The wireframes can also be view her below.
-[Wireframe 1](wireframes/MS2CalloutHomePageDesktop.png)
-Wireframe 2
-Wireframe 3
-Wireframe 4
+[Wireframe 1 - Home page callout Desktop](wireframes/MS2CalloutHomePageDesktop.png)
+[Wireframe 2 - Quiz Form Desktop](wireframes/MS2QuizFormHomePageDesktop.png)
+[Wireframe 3 - Home page callout Mobile](wireframes/MS2CalloutHomePageMobile.png)
+[Wireframe 4 - Quiz Form Mobile](wireframes/MS2QuizFormHomePageMobile.png)
 
 ## Surface
 ### Colours
@@ -144,7 +144,7 @@ I used Google Chrome as my main browser test as I was constantly using the Chrom
    * **Implementation** - As I stated before I had to create a global counter variable which is set to 0, which is the index for the first question. When the user clicks the 'Next Question' button the counter increments by 1 and the build quiz function is run again so the whole loop will start again but this time the second question and corresponding answers would be displayed.
    * **Result** - When the 'Next Question' button is clicked a new question will appear and the process can start again.
 
-7. * **Goal** - Finsih the quiz.
+7. * **Goal** - Finish the quiz.
    * **Implementation** - To implement this and get the 'Finish Quiz' button to appear instead if the 'Next Question' button I had to add in an extra piece of code into the check answer function. This code stated that if the maximum index number in the questions array had been reached the 'Finish Quiz' button would appear letting the user know they had reached the end of the quiz. When this button was clicked the quiz container would be removed and a new container would appear showing the final score. The final score was also stored as a global variable and incremented within the check answer function so the score would be added up throughout all questions combined. A sub function was then added here to give a different comment to the user depending on how good or bad their score was.
    * **Result** - The quiz form would disappear and the users overall score would appear with a funny comment depending on what the score was.
 
