@@ -51,7 +51,7 @@ function buildQuiz() {
     callout.classList.add("d-none");
     quiz.classList.remove("d-none");
 
-    quizQuestion.innerHTML = `Question ${counter + 1}: ${myQuestionsRandom[counter].question}`;
+    quizQuestion.innerHTML = `QUESTION ${counter + 1}: ${myQuestionsRandom[counter].question}`;
     answerOne.innerHTML = myQuestionsRandom[counter].answers[0].details;
     answerTwo.innerHTML = myQuestionsRandom[counter].answers[1].details;
     answerThree.innerHTML = myQuestionsRandom[counter].answers[2].details;
@@ -109,17 +109,14 @@ function checkAnswer() {
     // iterate through the order of the answers in myQuestionsRandom array
     for (let i = 0; i < answers.length; i++) {
         for (let j = 0; j < myQuestionsRandom[counter].answers.length; j++) {
-            console.log(myQuestionsRandom[counter].answers[j].correct_order);
             if (myQuestionsRandom[counter].answers[j].correct_order == i) {
                 correctAnswer = myQuestionsRandom[counter].answers[j];
-                console.log(correctAnswer);
 
             }
         }
         let correctAnswers = (answers[i].innerHTML == correctAnswer.details);
         if (correctAnswers) {
             // This if statement adds a green or red border to the answers depending on whether they are correct or not
-            console.log("correct");
             $(answers[i]).addClass('green-border');
             setTimeout(function () {
                 $(answers[i]).removeClass('green-border');
@@ -128,7 +125,6 @@ function checkAnswer() {
             overallScore++;
 
         } else {
-            console.log("incorrect");
             answers[i].classList.add("red-border");
             setTimeout(function () {
                 $(answers[i]).removeClass('red-border');
@@ -192,6 +188,3 @@ function tryAgain() {
     quizSubmit.classList.remove("d-none");
     finishQuiz.classList.add("d-none");
 }
-
-
-/*jshint esversion: 6 */

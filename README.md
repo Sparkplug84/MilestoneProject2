@@ -71,10 +71,10 @@ I wanted to create a  with a logo in the top left of the navbar to bring the use
 
 ## Sketelon
 I used the Balsamiq program for the wireframes and attached them to the directory. The original idea is still recognizable from the finished application. There have obviously been some design changes along the way but the wireframe is useful to have to put the idea in your head down on paper before you start coding. The wireframes can also be view her below.
-[Wireframe 1 - Home page callout Desktop](wireframes/MS2CalloutHomePageDesktop.png)<br/>>
-[Wireframe 2 - Quiz Form Desktop](wireframes/MS2QuizFormHomePageDesktop.png)<br/>
-[Wireframe 3 - Home page callout Mobile](wireframes/MS2CalloutHomePageMobile.png)<br/>
-[Wireframe 4 - Quiz Form Mobile](wireframes/MS2QuizFormHomePageMobile.png)
+[Wireframe 1 - Home page callout Desktop](wireframes/CalloutHomePageDesktop.png)<br/>
+[Wireframe 2 - Quiz Form Desktop](wireframes/QuizFormHomePageDesktop.png)<br/>
+[Wireframe 3 - Home page callout Mobile](wireframes/CalloutHomePageMobile.png)<br/>
+[Wireframe 4 - Quiz Form Mobile](wireframes/QuizFormHomePageMobile.png)
 
 ## Surface
 ### Colours
@@ -220,7 +220,7 @@ These ther the steps I took to host the live website through Github Pages:
 
 All of the content was written by myself but the facts for the quiz were taken from [Wikipedia](https://www.wikipedia.org/)
 
-#### Credits and special thanks
+### Credits and special thanks
 
 1. Special thanks to my mentor [Anthony Ngene](https://github.com/tonymontaro) who talked me through several pieces of code and advised me on how to improve my code
 2. Many thanks to the Code Institute tudors, who also helped me out with some small and larger issues I had during the development process

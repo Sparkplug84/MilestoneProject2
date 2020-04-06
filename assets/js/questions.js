@@ -77,7 +77,7 @@ const myQuestions = [
         ]
     },
     {
-        question: "Starting with the largest at the top, put these seas in order of area",
+        question: "Starting with the largest at the top, put these seas in order of total area",
         answers: [
             { "correct_order": 4, "details": "Irish Sea" },
             { "correct_order": 2, "details": "North Sea" },
