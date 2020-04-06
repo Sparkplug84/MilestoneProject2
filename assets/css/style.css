@@ -128,7 +128,10 @@ body {
 .quiz-question {
     background-color: #255F85;
     color: white;
-    width: 100%;
+    width: 100vw;
+    display: table-cell;
+    line-height: 20px;
+    vertical-align: middle;
 }
 
 .button-container {

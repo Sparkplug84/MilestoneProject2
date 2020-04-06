@@ -51,7 +51,7 @@ function buildQuiz() {
     callout.classList.add("d-none");
     quiz.classList.remove("d-none");
 
-    quizQuestion.innerHTML = myQuestionsRandom[counter].question;
+    quizQuestion.innerHTML = `Question ${counter + 1}: ${myQuestionsRandom[counter].question}`;
     answerOne.innerHTML = myQuestionsRandom[counter].answers[0].details;
     answerTwo.innerHTML = myQuestionsRandom[counter].answers[1].details;
     answerThree.innerHTML = myQuestionsRandom[counter].answers[2].details;
@@ -168,9 +168,9 @@ function finishButton() {
     quiz.classList.add("d-none");
     gameOver.classList.remove("d-none");
     finalScore.innerHTML = `Score: ${overallScore}/${5 * myQuestions.length}`;
-    if (overallScore < 6) {
+    if (overallScore < 40) {
         scoreComment.innerHTML = `Oh dear, I think we need to make an easier version for you. You may also need to buy yourself an atlas!`;
-    } else if (overallScore > 5 && overallScore < 10) {
+    } else if (overallScore > 39 && overallScore < 70) {
         scoreComment.innerHTML = `Well, that was ok but I think you can do better. Stop binging on Netflix and try some National Geographic!`;
     } else {
         scoreComment.innerHTML = `Well done. Someone has been spying on the whole world! Don't worry, your secret is safe with me.`;

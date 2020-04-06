@@ -59,25 +59,26 @@ My goal for the website was to make it simple and fun. I want it to be like an a
 * ‘Next Question’ button appears after the ‘Check answer’ button is clicked. When the player has assessed their score and which answers they have correct they can continue to the next question using the ‘Next Question’ button. 
 * If the last question in the array has been reached a ‘Finish Quiz’ button will appear, in a different colour to indicate a different function so it’s clear for the player. 
 * When ‘Finish Quiz’ button is clicked the final combined score will be added up and displayed on a new page with a different comment depending on how good or bad the players score was.
-* When the final score is displayed there will also be a 'Homepage' button to help the user get back to the home page.
+* When the final score is displayed there will be a 'Homepage' button to help the user get back to the home page.
+* When the final score is displayed there will also be a 'Try Again' button so the user can immediately start the quiz again if desired.
 
 ### Features left to implement 
 * I would like to create an easier mode for the quiz where you get 3 attempts for each question. For the less knowledgeable or younger players it gives them a chance to really learn something from the quiz if they have 3 chances to get all 5 answers in the correct order.
 
 ### Overall Structure
 
-I wanted to create a  with a logo in the top left of the navbar to bring the user back to the homepage along with some other game links and a feedback form on the right side of the navbar. These links would collapse into a dropdown button on smaller screens and not necessarily be active at this point in the porject. More of a future feature for the website. At the bottom the footer contained 3 columns with social links and copyright information. My aim was just to use the index.html page only to contain all the elements and styles. I would then use JavaScript to manipulate the DOM and hide and display different elements at different times of the quiz. This would be the best way to do it to get immediate functions taking place throughout the quiz so no waiting times for the user.
+I wanted to create a  with a logo in the top left of the navbar to bring the user back to the homepage along with some other game links and a feedback form on the right side of the navbar. These links would collapse into a dropdown button on smaller screens and not necessarily be active at this point in the project. More of a future feature for the website. At the bottom the footer contained 3 columns with social links and copyright information. My aim was just to use the index.html page only to contain all the elements and styles. I would then use JavaScript to manipulate the DOM and hide and display different elements at different times of the quiz. This would be the best way to do it to get immediate functions taking place throughout the quiz so no waiting times for the user.
 
 ## Sketelon
-I used the Balsamiq program for the wireframes and attached them to the directory in assets. The original idea is still recognizable from the finished application. There have obviously been some design changes along the way but the wireframe is useful to have to put the idea in your head down on paper before you start coding. The wireframes can also be view her below.
-[Wireframe 1 - Home page callout Desktop](wireframes/MS2CalloutHomePageDesktop.png)
-[Wireframe 2 - Quiz Form Desktop](wireframes/MS2QuizFormHomePageDesktop.png)
-[Wireframe 3 - Home page callout Mobile](wireframes/MS2CalloutHomePageMobile.png)
+I used the Balsamiq program for the wireframes and attached them to the directory. The original idea is still recognizable from the finished application. There have obviously been some design changes along the way but the wireframe is useful to have to put the idea in your head down on paper before you start coding. The wireframes can also be view her below.
+[Wireframe 1 - Home page callout Desktop](wireframes/MS2CalloutHomePageDesktop.png)<br/>>
+[Wireframe 2 - Quiz Form Desktop](wireframes/MS2QuizFormHomePageDesktop.png)<br/>
+[Wireframe 3 - Home page callout Mobile](wireframes/MS2CalloutHomePageMobile.png)<br/>
 [Wireframe 4 - Quiz Form Mobile](wireframes/MS2QuizFormHomePageMobile.png)
 
 ## Surface
 ### Colours
-For the colour scheme I wanted to go for something bright and fun and I used a colour scheme generator to help me called Coolors which can be found at coolors.co The navbar and footer sharing the same dark red/brown colour and complemented with a vibrant orange in the background throughout the site. The callout and quiz backgrounds are both white to give a clear contrast between background and main elements of the site. Within the white quiz container I used the same dark blue for the question, switch buttons and check answer question to give a uniform look and a light grey background colour for the 5 answer elements. After the check answer button is clicked, the next question button appears and it is a light green colour. I thought it best to change the colour of the button at this point so the player would clearly see that the button had changed. Further on in the quiz after the final question the ‘Finish Quiz’ button appears and changes colour again to end the quiz and get your final score. The 3 buttons – ‘Check Answer’, ‘Next Question’ and ‘Finish Quiz’ all occupy the same space but only appear one at a time, hence the need for a colour change, so the player can clearly see something else will happen.
+For the colour scheme I wanted to go for something bright and fun and I used a colour scheme generator to help me called Coolors which can be found at [Coolors](https://coolors.co/) The navbar and footer sharing the same dark red/brown colour and complemented with a vibrant orange in the background throughout the site. The callout and quiz backgrounds are both white to give a clear contrast between background and main elements of the site. Within the white quiz container I used the same dark blue for the question, switch buttons and check answer question to give a uniform look and a light grey background colour for the 5 answer elements. After the check answer button is clicked, the next question button appears and it is a light green colour. I thought it best to change the colour of the button at this point so the player would clearly see that the button had changed. Further on in the quiz after the final question the ‘Finish Quiz’ button appears and changes colour again to end the quiz and get your final score. The 3 buttons – ‘Check Answer’, ‘Next Question’ and ‘Finish Quiz’ all occupy the same space but only appear one at a time, hence the need for a colour change, so the player can clearly see something else will happen.
 
 ### Font
 For the font I wanted to go with something fun and playful. I used Google fonts to find one and decided upon 'Ubuntu'. I think this font works well with the game. 
@@ -204,3 +205,23 @@ These ther the steps I took to host the live website through Github Pages:
 * Selected 'Master Branch' from the 'Source' dropdown menu.
 * Clicked to confirm my selection.
 * Your site is published https://sparkplug84.github.io/MilestoneProject2/
+
+### Running the code locally
+
+* On GitHub, select the desired repository
+* Under the repository name, click the green 'Clone or download' button
+* In the Clone with HTTPs section, click the button next to the URL to copy
+* Open up your development IDE
+* Change the current working directory to the desired file location
+* Use the terminal to type git clone, and then paste the URL you copied in Step 2 and press enter
+* The copied repository will now be displayed in your own IDE for you to start working on
+
+### Content
+
+All of the content was written by myself but the facts for the quiz were taken from [Wikipedia](https://www.wikipedia.org/)
+
+#### Credits and special thanks
+
+1. Special thanks to my mentor [Anthony Ngene](https://github.com/tonymontaro) who talked me through several pieces of code and advised me on how to improve my code
+2. Many thanks to the Code Institute tudors, who also helped me out with some small and larger issues I had during the development process
+3. Thanks to all the friends and family who tested the game on various devides and gave me feedback to improve the game
