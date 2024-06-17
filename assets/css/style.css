@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,700&display=swap');
 
 body {
-    background-color: #E9724C;
+    /* background-color: #dcdcdc; */
+    background: url("https://hiphomeschoolmoms.com/wp-content/uploads/2018/07/world-landmarks-wide.jpg") center center/cover no-repeat;
     font-family: "Ubuntu", sans-serif;
+    display: flex;
+            flex-direction: column;
 }
 
 /** Navbar **/
@@ -15,8 +18,8 @@ body {
 .navbar {
     margin-bottom: 0;
     border: 0;
-    width: 100%;
-    background-color: #481D24;
+    width: 100vw;
+    background-color: #325D88;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -45,16 +48,40 @@ body {
     transform: scale(1.1);
 }
 
+/* #navbar {
+    position: absolute;
+    top: 0;
+} */
+
 /** Navbar End **/
 
 /* Jumbotron */
 
-.jumbotron {
-    margin: 5rem 0;
+#callout {
+    /* position: absolute; */
+    /* width: 100%;
+    height: 100%; */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.callout {
+    /* border: 1px solid black; */
+    border-radius: 20px !important;
+    margin: auto;
     text-align: center;
     background-color: white;
-    transform: translateY(15%);
+    /* transform: translateY(15%); */
     border-radius: 0;
+    width: 90%;
+    height: auto;
+    padding: 40px;
+    box-shadow: 10px 10px 35px -5px rgba(68,67,67,0.78);
+-webkit-box-shadow: 10px 10px 35px -5px rgba(68,67,67,0.78);
+-moz-box-shadow: 10px 10px 35px -5px rgba(68,67,67,0.78);
+
 }
 
 .jumbotron-container {
@@ -217,8 +244,11 @@ body {
 /** Footer **/
 
 footer {
+    /* position: absolute; */
+    position: sticky;
+    /* bottom: 0; */
     clear: both;
-    background-color: #481D24;
+    background-color: #325D88;
     padding: 20px;
 }
 
@@ -279,6 +309,12 @@ a .fa-github {
 
 /* Media Queries*/
 
+@media (min-width: 700px) {
+    .callout {
+        width: 50%;
+    }
+}
+
 @media (max-width: 576px) {
     .jumbotron {
         margin-top: 4rem;
@@ -321,10 +357,10 @@ a .fa-github {
     }
 }
 
-@media(min-width: 1400px) {
+/* @media(min-width: 1400px) {
     html {
         width: 1400px;
         margin: 0 auto;
         background-color: white;
     }
-}
+} */
